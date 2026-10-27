@@ -42,8 +42,9 @@ test('install adds one skill and agent while preserving unrelated config and is 
   assert.match(await readFile(path.join(f.target, '.codex/agents/design_lab.toml'), 'utf8'), /name="design_lab"/);
   const config = await readFile(path.join(f.target, '.codex/config.toml'), 'utf8');
   assert.ok(config.startsWith(original));
-  assert.match(config, /shadcn@4\.23\.0/);
-  assert.match(config, /@magicuidesign\/mcp@2\.0\.0/);
+  assert.match(config, /\[mcp_servers\.design_lab\]/);
+  assert.match(config, /scripts\/mcp\.mjs/);
+  assert.doesNotMatch(config, /mcp_servers\.design_lab_(?:shadcn|magicui)/);
   await installProject(f.target, f.source);
   assert.equal(await readFile(path.join(f.target, '.codex/config.toml'), 'utf8'), config);
 });
@@ -65,6 +66,40 @@ test('MCP conflict is detected before any skill or agent is written', async t =>
   const f = await fixture(t);
   await mkdir(path.join(f.target, '.codex'), { recursive: true });
   const original = '[mcp_servers.design_lab_shadcn]\ncommand = "different"\n';
+  await writeFile(path.join(f.target, '.codex/config.toml'), original);
+  await assert.rejects(installProject(f.target, f.source), /conflict/i);
+  assert.equal(await readFile(path.join(f.target, '.codex/config.toml'), 'utf8'), original);
+  await assert.rejects(readdir(path.join(f.target, '.agents/skills')), { code: 'ENOENT' });
+});
+
+test('pristine legacy tools and skill upgrade to the single internal gateway', async t => {
+  const f = await fixture(t);
+  await mkdir(f.target);
+  await installProject(f.target, f.source);
+  const original = '[mcp_servers.existing]\ncommand = "keep-me"\n\n[mcp_servers.design_lab_shadcn]\ncommand = "npx"\nargs = ["-y", "shadcn@4.23.0", "mcp"]\n\n[mcp_servers.design_lab_magicui]\ncommand = "npx"\nargs = ["-y", "@magicuidesign/mcp@2.0.0"]\n';
+  await writeFile(path.join(f.target, '.codex/config.toml'), original);
+  const oldSkill = path.join(f.target, '.agents/skills/design-lab');
+  const { filesIn } = await import('../../skills/design-lab/scripts/files.mjs');
+  const records = {};
+  for (const filename of await filesIn(oldSkill)) records[filename] = createHash('sha256').update(await readFile(path.join(oldSkill, filename))).digest('hex');
+  const oldAgent = await readFile(path.join(f.target, '.codex/agents/design_lab.toml'));
+  await writeFile(path.join(f.source, 'assets/legacy-v0.1.json'), JSON.stringify({ files: records, agentSha256: createHash('sha256').update(oldAgent).digest('hex') }));
+  await writeFile(path.join(f.source, 'SKILL.md'), 'New internal workflow');
+  await writeFile(path.join(f.source, 'assets/design_lab.toml'), 'name="design_lab"\ndescription="Updated fixture"\ndeveloper_instructions="Use internal tools"\n');
+  const result = await installProject(f.target, f.source);
+  assert.equal(result.upgraded, true);
+  const config = await readFile(path.join(f.target, '.codex/config.toml'), 'utf8');
+  assert.ok(config.startsWith('[mcp_servers.existing]\ncommand = "keep-me"'));
+  assert.match(config, /\[mcp_servers\.design_lab\]/);
+  assert.doesNotMatch(config, /design_lab_(?:shadcn|magicui)/);
+  assert.equal(await readFile(path.join(oldSkill, 'SKILL.md'), 'utf8'), 'New internal workflow');
+  assert.equal((await installProject(f.target, f.source)).upgraded, false);
+});
+
+test('managed MCP parsing does not erase whitespace inside a user-modified command', async t => {
+  const f = await fixture(t);
+  await mkdir(path.join(f.target, '.codex'), { recursive: true });
+  const original = '[mcp_servers.design_lab_shadcn]\ncommand = "n p x"\nargs = ["-y", "shadcn@4.23.0", "mcp"]\n';
   await writeFile(path.join(f.target, '.codex/config.toml'), original);
   await assert.rejects(installProject(f.target, f.source), /conflict/i);
   assert.equal(await readFile(path.join(f.target, '.codex/config.toml'), 'utf8'), original);

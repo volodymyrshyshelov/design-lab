@@ -1,60 +1,63 @@
 # Working with Design Lab
 
-Design Lab connects a product brief, visual alternatives, working prototype actions, and a reviewable browser result. Use one natural-language conversation with `$design-lab`; you do not need to choose its internal design methods or libraries.
+Design Lab manages the path from a brief to a checked prototype inside the current Codex session. Its process and tools are bundled; you describe the result and review the output rather than selecting separate design methods, servers, or specialist agents.
 
-## Describe the outcome
+## Give it a product task
 
-After [installation](installation.md), open the project in Codex. Attach the specification or identify an existing project document:
+After [installation](installation.md), open the project in Codex. Attach a specification or identify its existing source document:
 
 ```text
-$design-lab Use this specification to create three different
-directions for a customer workspace and an admin interface.
-Include mobile and desktop, connected forms, and the important
-error and access states. List unresolved product decisions.
+$design-lab Use this specification to create three distinct directions
+for a customer workspace and an admin interface. Include mobile
+and desktop, connected forms, and the important error and access
+states. Identify unresolved decisions and review the finished result.
 ```
 
-Specify the audience, required tasks, brand constraints, and expected deliverable. The number of alternatives follows your request. The starter's sample screens and roles are a foundation, not requirements for every project.
+State the audience, required tasks, brand constraints, and expected deliverable. The number of alternatives follows your request. Template roles and screens do not become requirements for every product.
 
-The specification remains the source of confirmed behavior. Design proposals and open questions should be distinguishable from documented rules. The brief, coverage map, decisions, and reports preserve the working context in project files so a later session can continue from the same evidence.
+The coordinator reads the specification and project before planning. Confirmed behavior, proposed design choices, and unresolved questions stay distinguishable. It carries forward choices and authorization already provided instead of restarting the discussion for each internal stage.
 
-## Compare alternatives
+## What happens inside the run
 
-Open the prepared gallery and compare the same task across directions. Try creating a request or changing a setting, rather than judging only the landing screen. Alternatives should share the intended behavior while differing in composition, navigation, typography, and density.
+The coordinator records the brief and a plan with owned file scopes, dependencies, and acceptance criteria. The managed record is `docs/design-lab/workflow.json`, so continuation does not depend on one chat's memory.
 
-Refine a selected direction with an ordinary request:
+It uses the specializations needed for the task:
+
+- Requirements connects source requirements to screens, actions, states, and important exceptions.
+- Visual design develops comparable alternatives with distinct composition, navigation, typography, and density.
+- Implementation connects the behavior, persistence, and views, with meaningful checks for changed behavior.
+- Interaction QA exercises actual actions, alternative states, responsive layouts, keyboard focus, and reload behavior where relevant.
+- Independent review examines the brief, current artifacts, and evidence in a fresh worker context.
+- Documentation records the outcome, decisions, verification limits, and continuation context.
+
+These are internal prompt resources, not six additional installed agent configurations. Codex's native child agents execute their assignments using the current session's available model and permissions. Codex may display their activity. Small changes use only the work that is needed; every task does not require six separate assignments.
+
+The gateway stores task results, checks, evidence paths, and actual native worker IDs reported by the coordinator. Reports belong to individual assignments, and their recorded hashes prevent a rewritten log from silently standing in for the earlier result.
+
+## Review, repair, and acceptance
+
+A review of implementation uses a fresh native worker distinct from the coordinator and contributors. Its initial context contains the brief, artifacts, and relevant checks, rather than the author's conclusions. The reviewer reports actionable findings and what it could actually verify.
+
+Failed checks or open material findings prevent acceptance. The coordinator investigates, assigns a scoped correction, repeats affected checks, and requests a current review. Source and evidence hashes tie acceptance to the declared reviewed result; a changed result needs current verification. These records enforce declared separation and traceability, not cryptographic proof of a worker's identity.
+
+If native delegation is unavailable, the package cannot manufacture an independent model context. Work can be recorded, but the run remains `needs-review`; the author does not turn into their own independent reviewer. The outcome should make that limit visible.
+
+## Compare and refine alternatives
+
+Open the gallery and try the same task across directions. A menu entry does not establish that an action works. Compare the real form, state changes, errors, and navigation as well as visual character.
 
 ```text
 $design-lab Continue with the second direction. Keep its navigation,
-make the list denser, and add the approval screen described in the
-specification. Identify the affected flows and verify them again.
+make the list denser, and add the approval screen in the specification.
+Check the affected flows and obtain a fresh review of the changes.
 ```
 
-Changing one direction does not imply replacing the others. A review should identify what changed, why it changed, and which checks confirm the result. Use the project's saved decisions to keep accepted behavior stable.
+Changing one direction does not imply replacing the others. The coordinator preserves accepted decisions, updates coverage, and starts or continues the appropriate managed run. A completed run is a record of that accepted revision; new changes require a new run.
 
-## Read verification evidence
+## Share and continue
 
-A menu entry does not prove that its screen or action works. Reports should identify the files and build checked, the actions performed, the viewports used, failures found, and remaining gaps. Render checks, interaction tests, and visual inspection answer different questions.
+Delivery includes the usable preview or packaged `site/`, the source revision, the actual checks, and remaining limitations. For authorized network sharing, the bundled server can listen on `0.0.0.0`; viewers receive the server's reachable IP or hostname and port. Only the packaged site is served. Existing listeners and unrelated worktrees are preserved.
 
-Local persistence supports connected synthetic records and reload behavior. It does not establish production authentication, database isolation, real payments, or server security. The same preview URL also does not synchronize local browser data between viewers.
+Another session can continue from the repository's specification, brief, decisions, coverage, workflow record, and evidence. Use separate worktrees for parallel editing. Personal chat history and local browser data are separate from shared source files; opening one URL does not synchronize viewers' synthetic records.
 
-Creating and revising prototypes requires a model in your Codex session. Optional image generation uses capabilities available in that session; this repository does not install a local image-generation service. Once packaged, a static prototype can be viewed without Codex or a model.
-
-## Share a browser result
-
-Build and package the project first. The output is `site/`, with a manifest recording its contents. For an authorized network preview, run from the project directory:
-
-```sh
-node .agents/skills/design-lab/scripts/index.mjs serve . --bind 0.0.0.0 --port 4174
-```
-
-Only `site/` is served. Give viewers the server's actual IP address or hostname, such as `http://<server-IP>:4174/`. `0.0.0.0` is a listening address, not a viewer URL. Verify reachability from another device and choose a free port without stopping an existing service.
-
-Deliver the usable URL or packaged files, the source revision, and the verification report. A prototype request does not itself authorize a Git push or deployment; use the scope already authorized for the task.
-
-## Continue across sessions
-
-Another Codex session can continue from the repository's specification, brief, decisions, coverage, and current source files. Personal chat history and browser storage are separate from those shared files.
-
-When editing in parallel, use distinct branches or worktrees and reconcile changes through the project's normal review process. Several people can view one build, but independent tasks should not overwrite the same working directory.
-
-Keep model credentials, personal profiles, caches, and runtime data outside version control. Update the installed Design Lab copy deliberately when adopting a newer version, preserving project changes as described in the [installation guide](installation.md).
+Creating designs requires the signed-in Codex model. Packaged static results open without Codex. Local prototype behavior does not establish production authentication, database isolation, real payments, or external integrations. Optional image generation remains a host capability. Pushes and deployments follow the authorization already given for the task.

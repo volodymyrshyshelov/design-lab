@@ -14,12 +14,13 @@ function option(args, name, fallback) {
 export async function run(argv = process.argv.slice(2)) {
   const [command, ...args] = argv;
   if (!command || ['help', '--help', '-h'].includes(command)) {
-    console.log('Design Lab\n\ncreate <project> --name "Project title"\ninstall <project>\ndoctor [project]\npackage <project>\nserve <project> [--bind 127.0.0.1] [--port 4174]\ncheck <project> --url http://127.0.0.1:4174\n\nCreate/install never changes a personal Codex profile. Server exposes site/ only.');
+    console.log('Design Lab\n\ncreate <project> --name "Project title"\ninstall <project>\ndoctor [project]\ntools list [--project <project>]\ntools call <tool> --input <json-file> [--project <project>]\npackage <project>\nserve <project> [--bind 127.0.0.1] [--port 4174]\ncheck <project> --url http://127.0.0.1:4174\n\nCreate/install never changes a personal Codex profile. Internal component tools install their pinned runtime automatically. Server exposes site/ only.');
     return;
   }
   const project = args[0] && !args[0].startsWith('--') ? args[0] : process.cwd();
   let result;
-  if (command === 'create') result = await createProject(project, option(args, '--name', 'Design Lab Project'));
+  if (command === 'tools') { const { runTool } = await import('./tool.mjs'); result = await runTool(args); }
+  else if (command === 'create') result = await createProject(project, option(args, '--name', 'Design Lab Project'));
   else if (command === 'install') result = await installProject(project);
   else if (command === 'doctor') result = await doctor(project);
   else if (command === 'package') result = await buildSite(project);

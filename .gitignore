@@ -15,3 +15,5 @@ __pycache__/
 **/.cache/
 **/.impeccable/
 **/.taste-skill/
+
+**/.bootstrap-lock/

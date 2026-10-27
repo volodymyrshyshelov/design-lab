@@ -1,6 +1,7 @@
 import { spawnSync } from 'node:child_process';
 import path from 'node:path';
 import { exists } from './files.mjs';
+import { inspectRuntime } from './bootstrap.mjs';
 
 function version(commands) {
   for (const command of commands) {
@@ -23,5 +24,6 @@ export async function doctor(project = process.cwd()) {
   } catch (error) { if (error.code !== 'ERR_MODULE_NOT_FOUND') throw error; }
   const nodeMajor = Number(process.versions.node.split('.')[0]);
   const supported = nodeMajor === 24 && process.versions.node.localeCompare('24.22.1', undefined, { numeric: true }) >= 0;
-  return { project, node: { ...node, supported }, npm, python, browser, projectSkillInstalled: await exists(path.join(project, '.agents/skills/design-lab/SKILL.md')), projectAgentInstalled: await exists(path.join(project, '.codex/agents/design_lab.toml')), configurationScope: 'Project only; Codex login and permissions remain with the invoking user.', readyForDependencyInstall: supported && npm.available === true, noInstallationPerformed: true };
+  const internalRuntime = await inspectRuntime();
+  return { project, node: { ...node, supported }, npm, python, browser, internalRuntime, projectSkillInstalled: await exists(path.join(project, '.agents/skills/design-lab/SKILL.md')), projectAgentInstalled: await exists(path.join(project, '.codex/agents/design_lab.toml')), configurationScope: 'Project only; Codex login and permissions remain with the invoking user.', readyForDependencyInstall: supported && npm.available === true, noInstallationPerformed: true };
 }

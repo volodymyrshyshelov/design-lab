@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "sourceLock": "volodymyrshyshelov/design-lab/third-party-lock.json",
-  "sourceLockSha256": "0e6ab0fa2050384dc22bba96177b1eb4bb5b5e58703d14a3140c6ea9536509c6",
+  "sourceLockSha256": "3a11d7cc3fbdfefaba8fc38d5af870ecd2689b456d0557da3d53caebe3bdd86f",
   "modules": [
     {
       "id": "impeccable",
@@ -2632,6 +2632,501 @@
         }
       ],
       "licenseEvidenceNote": "The pinned upstream README declares MIT. No standalone LICENSE file exists in the pinned repository tree. This snapshot retains that declaration and original module attribution without inventing a copyright notice."
+    },
+    {
+      "id": "superpowers-process",
+      "upstream": {
+        "repository": "https://github.com/obra/superpowers",
+        "revision": "2ce8aa15d05bd57213e6f746f953aafb7ded7a8b",
+        "ref": "v7.0.1",
+        "path": "skills",
+        "license": "MIT"
+      },
+      "installedSourceVersion": "7.0.1",
+      "localPath": "references/vendor/superpowers-process",
+      "entry": "references/vendor/superpowers-process/GUIDE.md",
+      "files": [
+        {
+          "upstreamPath": "skills/brainstorming/SKILL.md",
+          "path": "references/vendor/superpowers-process/brainstorming/GUIDE.md",
+          "sourceSha256": "61a7ef918652108c76a3fd01e02dd92d39996c6b46d4cb2819cbd03f6c45e46a",
+          "sha256": "61a7ef918652108c76a3fd01e02dd92d39996c6b46d4cb2819cbd03f6c45e46a",
+          "upstreamGitBlobSha": "7f5eef02f894c4f24cea313660c0465ce9c084ed",
+          "adaptations": [
+            "Relocated selected method under the internal process module",
+            "Renamed SKILL.md to GUIDE.md to prevent separate skill discovery"
+          ],
+          "upstreamGitMode": "100644"
+        },
+        {
+          "upstreamPath": "skills/brainstorming/builder-check-prompt.md",
+          "path": "references/vendor/superpowers-process/brainstorming/builder-check-prompt.md",
+          "sourceSha256": "36d51a4723d6f0a3ce5811a0ea3b3a8424f07533947e1355f5d8cb8cce40c55e",
+          "sha256": "36d51a4723d6f0a3ce5811a0ea3b3a8424f07533947e1355f5d8cb8cce40c55e",
+          "upstreamGitBlobSha": "136e9c1d516ee1852abc5e556e76ce1b085d3827",
+          "adaptations": [
+            "Relocated selected method under the internal process module"
+          ],
+          "upstreamGitMode": "100644"
+        },
+        {
+          "upstreamPath": "skills/brainstorming/scripts/frame-template.html",
+          "path": "references/vendor/superpowers-process/brainstorming/scripts/frame-template.html",
+          "sourceSha256": "6a8a4e58bd6a44b904e2e3c57de774481d909204597e1498de53f1b2fecc4c4e",
+          "sha256": "6a8a4e58bd6a44b904e2e3c57de774481d909204597e1498de53f1b2fecc4c4e",
+          "upstreamGitBlobSha": "f540bb8a4f88107e2b37b2871a4c1a55a3b6f720",
+          "adaptations": [
+            "Relocated selected method under the internal process module"
+          ],
+          "upstreamGitMode": "100644"
+        },
+        {
+          "upstreamPath": "skills/brainstorming/scripts/helper.js",
+          "path": "references/vendor/superpowers-process/brainstorming/scripts/helper.js",
+          "sourceSha256": "43c6d69954a46ec34a2a262bcc62a9a7e83e839c739f199cb72646d397c686e3",
+          "sha256": "43c6d69954a46ec34a2a262bcc62a9a7e83e839c739f199cb72646d397c686e3",
+          "upstreamGitBlobSha": "e11d26489ce248f37af3e4dd01ddec6a4e88287f",
+          "adaptations": [
+            "Relocated selected method under the internal process module"
+          ],
+          "upstreamGitMode": "100644"
+        },
+        {
+          "upstreamPath": "skills/brainstorming/scripts/server.cjs",
+          "path": "references/vendor/superpowers-process/brainstorming/scripts/server.cjs",
+          "sourceSha256": "763abf96510e0b892a1141397b31aa82ef900cf87ed34dde94bc8782baf4a7ca",
+          "sha256": "763abf96510e0b892a1141397b31aa82ef900cf87ed34dde94bc8782baf4a7ca",
+          "upstreamGitBlobSha": "fdc796122583f5d6687d9582eb265c2fa0cb7781",
+          "adaptations": [
+            "Relocated selected method under the internal process module"
+          ],
+          "upstreamGitMode": "100644"
+        },
+        {
+          "upstreamPath": "skills/brainstorming/scripts/start-server.sh",
+          "path": "references/vendor/superpowers-process/brainstorming/scripts/start-server.sh",
+          "sourceSha256": "a4e5ae84275bcaacd2f84345afeabe59cf7b00ba080e123da7cc1fb226f12847",
+          "sha256": "a4e5ae84275bcaacd2f84345afeabe59cf7b00ba080e123da7cc1fb226f12847",
+          "upstreamGitBlobSha": "016a8e4870142ce2adbe81a021d8b6b9073e7618",
+          "adaptations": [
+            "Relocated selected method under the internal process module"
+          ],
+          "upstreamGitMode": "100755"
+        },
+        {
+          "upstreamPath": "skills/brainstorming/scripts/stop-server.sh",
+          "path": "references/vendor/superpowers-process/brainstorming/scripts/stop-server.sh",
+          "sourceSha256": "0b5ccbbd57f62d3ed88993f7940b5ee0e5c0fc9b21c550c623da4f6292e47daf",
+          "sha256": "0b5ccbbd57f62d3ed88993f7940b5ee0e5c0fc9b21c550c623da4f6292e47daf",
+          "upstreamGitBlobSha": "7cacfe9440043f7a46eac555cd835fad0769c425",
+          "adaptations": [
+            "Relocated selected method under the internal process module"
+          ],
+          "upstreamGitMode": "100755"
+        },
+        {
+          "upstreamPath": "skills/brainstorming/visual-companion.md",
+          "path": "references/vendor/superpowers-process/brainstorming/visual-companion.md",
+          "sourceSha256": "6ffcb038b53254bd31debaa15e12dcd4ff24bd63d690e0b644ac6396701cf2e2",
+          "sha256": "6ffcb038b53254bd31debaa15e12dcd4ff24bd63d690e0b644ac6396701cf2e2",
+          "upstreamGitBlobSha": "8dca065bd9adb9d4fa82a66acbb4176ea23259c6",
+          "adaptations": [
+            "Relocated selected method under the internal process module"
+          ],
+          "upstreamGitMode": "100644"
+        },
+        {
+          "upstreamPath": "skills/writing-plans/SKILL.md",
+          "path": "references/vendor/superpowers-process/writing-plans/GUIDE.md",
+          "sourceSha256": "a6c67c1900064347c2a329990dd3c555657c51c3ec53b259a08aa01a2c26139a",
+          "sha256": "a6c67c1900064347c2a329990dd3c555657c51c3ec53b259a08aa01a2c26139a",
+          "upstreamGitBlobSha": "4cf0275d88d67aa4ef09f4bbca9970ed6ff74a00",
+          "adaptations": [
+            "Relocated selected method under the internal process module",
+            "Renamed SKILL.md to GUIDE.md to prevent separate skill discovery"
+          ],
+          "upstreamGitMode": "100644"
+        },
+        {
+          "upstreamPath": "skills/dispatching-parallel-agents/SKILL.md",
+          "path": "references/vendor/superpowers-process/dispatching-parallel-agents/GUIDE.md",
+          "sourceSha256": "1968923066f3b707eb01d1992cdf4c42284c3855f70253b9cd5000ff45fca13c",
+          "sha256": "1968923066f3b707eb01d1992cdf4c42284c3855f70253b9cd5000ff45fca13c",
+          "upstreamGitBlobSha": "3fa091b348bbe0a18eaa0e17e9092c97f7005cbe",
+          "adaptations": [
+            "Relocated selected method under the internal process module",
+            "Renamed SKILL.md to GUIDE.md to prevent separate skill discovery"
+          ],
+          "upstreamGitMode": "100644"
+        },
+        {
+          "upstreamPath": "skills/subagent-driven-development/SKILL.md",
+          "path": "references/vendor/superpowers-process/subagent-driven-development/GUIDE.md",
+          "sourceSha256": "ba41f697136cba88a7962d60c8e2f97488ba04a8688b1d0fbeb27f6953808e75",
+          "sha256": "ba41f697136cba88a7962d60c8e2f97488ba04a8688b1d0fbeb27f6953808e75",
+          "upstreamGitBlobSha": "ea170ed101d61a52fdee0ade8368ec0723980a5c",
+          "adaptations": [
+            "Relocated selected method under the internal process module",
+            "Renamed SKILL.md to GUIDE.md to prevent separate skill discovery"
+          ],
+          "upstreamGitMode": "100644"
+        },
+        {
+          "upstreamPath": "skills/subagent-driven-development/implementer-prompt.md",
+          "path": "references/vendor/superpowers-process/subagent-driven-development/implementer-prompt.md",
+          "sourceSha256": "81dd9d5a3fb0b09b96b5829f03b9796842f3199ef7591d1ba1c2db2a515f64d0",
+          "sha256": "81dd9d5a3fb0b09b96b5829f03b9796842f3199ef7591d1ba1c2db2a515f64d0",
+          "upstreamGitBlobSha": "5c8ecd61fba036263bf88d0af24d47125780efa0",
+          "adaptations": [
+            "Relocated selected method under the internal process module"
+          ],
+          "upstreamGitMode": "100644"
+        },
+        {
+          "upstreamPath": "skills/subagent-driven-development/re-review-prompt.md",
+          "path": "references/vendor/superpowers-process/subagent-driven-development/re-review-prompt.md",
+          "sourceSha256": "0828a5e9cbb12ba49f14621dd8c3953c48c0fc383e75bb5494f055ed0d6d824f",
+          "sha256": "0828a5e9cbb12ba49f14621dd8c3953c48c0fc383e75bb5494f055ed0d6d824f",
+          "upstreamGitBlobSha": "d49c1825f01e79641ba37e5e942d1d2bbaad1a3c",
+          "adaptations": [
+            "Relocated selected method under the internal process module"
+          ],
+          "upstreamGitMode": "100644"
+        },
+        {
+          "upstreamPath": "skills/subagent-driven-development/references/batching.md",
+          "path": "references/vendor/superpowers-process/subagent-driven-development/references/batching.md",
+          "sourceSha256": "b54dc7e23dbfb90db89bcb2fb3af591aabf6a271a165fbc0da4c6f9439980eac",
+          "sha256": "b54dc7e23dbfb90db89bcb2fb3af591aabf6a271a165fbc0da4c6f9439980eac",
+          "upstreamGitBlobSha": "6224e4ba255ed8359d608aaa4b8af785b6fdee70",
+          "adaptations": [
+            "Relocated selected method under the internal process module"
+          ],
+          "upstreamGitMode": "100644"
+        },
+        {
+          "upstreamPath": "skills/subagent-driven-development/references/cannot-verify.md",
+          "path": "references/vendor/superpowers-process/subagent-driven-development/references/cannot-verify.md",
+          "sourceSha256": "e698713a15e0eabf1a2ab26ffe1bb04bf70c9d6d2e2060d44a0f9a1bdd4408bf",
+          "sha256": "e698713a15e0eabf1a2ab26ffe1bb04bf70c9d6d2e2060d44a0f9a1bdd4408bf",
+          "upstreamGitBlobSha": "e952f2d40c2646840f33f7856707f08828cbd46a",
+          "adaptations": [
+            "Relocated selected method under the internal process module"
+          ],
+          "upstreamGitMode": "100644"
+        },
+        {
+          "upstreamPath": "skills/subagent-driven-development/references/final-review.md",
+          "path": "references/vendor/superpowers-process/subagent-driven-development/references/final-review.md",
+          "sourceSha256": "2fd999d86e5dd0b9b32aaf93f2a41663ef30b3e3cb78fb2fd5cb450eb59eb9de",
+          "sha256": "2fd999d86e5dd0b9b32aaf93f2a41663ef30b3e3cb78fb2fd5cb450eb59eb9de",
+          "upstreamGitBlobSha": "851a5c5520cbb377b823229cbfdf441dcd79ac27",
+          "adaptations": [
+            "Relocated selected method under the internal process module"
+          ],
+          "upstreamGitMode": "100644"
+        },
+        {
+          "upstreamPath": "skills/subagent-driven-development/references/fix-loop.md",
+          "path": "references/vendor/superpowers-process/subagent-driven-development/references/fix-loop.md",
+          "sourceSha256": "eafff1f801af2ced86e8761f3eeef04b701860d986ba5d0a8b20d506a75104bb",
+          "sha256": "eafff1f801af2ced86e8761f3eeef04b701860d986ba5d0a8b20d506a75104bb",
+          "upstreamGitBlobSha": "0b476e92a068af56113ff0a5c9c7ebef1afe7d2c",
+          "adaptations": [
+            "Relocated selected method under the internal process module"
+          ],
+          "upstreamGitMode": "100644"
+        },
+        {
+          "upstreamPath": "skills/subagent-driven-development/references/handling-reports.md",
+          "path": "references/vendor/superpowers-process/subagent-driven-development/references/handling-reports.md",
+          "sourceSha256": "8f759cdd4936220c38aab05b6d6c48c6df8ac8f146b0f37a6d2facbf87133c67",
+          "sha256": "8f759cdd4936220c38aab05b6d6c48c6df8ac8f146b0f37a6d2facbf87133c67",
+          "upstreamGitBlobSha": "cf91cdcddde1e051bf2fc51329197af4063b9dbc",
+          "adaptations": [
+            "Relocated selected method under the internal process module"
+          ],
+          "upstreamGitMode": "100644"
+        },
+        {
+          "upstreamPath": "skills/subagent-driven-development/references/preflight.md",
+          "path": "references/vendor/superpowers-process/subagent-driven-development/references/preflight.md",
+          "sourceSha256": "3ea21c5fc1af1a190ac8a9d19ceb0849b47bf2ffe27b87dffcc21b6a0539776c",
+          "sha256": "3ea21c5fc1af1a190ac8a9d19ceb0849b47bf2ffe27b87dffcc21b6a0539776c",
+          "upstreamGitBlobSha": "170164883949e00aace6297b600b2c5a72bc6d5a",
+          "adaptations": [
+            "Relocated selected method under the internal process module"
+          ],
+          "upstreamGitMode": "100644"
+        },
+        {
+          "upstreamPath": "skills/subagent-driven-development/references/resuming.md",
+          "path": "references/vendor/superpowers-process/subagent-driven-development/references/resuming.md",
+          "sourceSha256": "ff6e38bde2276faa2a7e93513086caded0ea10edbf2ec7f349a7e3b0d7c668c4",
+          "sha256": "ff6e38bde2276faa2a7e93513086caded0ea10edbf2ec7f349a7e3b0d7c668c4",
+          "upstreamGitBlobSha": "409b826eb8c875c51dd3799add37fcaab43b69b3",
+          "adaptations": [
+            "Relocated selected method under the internal process module"
+          ],
+          "upstreamGitMode": "100644"
+        },
+        {
+          "upstreamPath": "skills/subagent-driven-development/scripts/review-package",
+          "path": "references/vendor/superpowers-process/subagent-driven-development/scripts/review-package",
+          "sourceSha256": "f9275175b2276b1d5fdb1bae0bedaadd2a950659b7c6f311ea37ff85e1861b1f",
+          "sha256": "f9275175b2276b1d5fdb1bae0bedaadd2a950659b7c6f311ea37ff85e1861b1f",
+          "upstreamGitBlobSha": "fa7625f053dc852200ddd497662508ff1ae40bb1",
+          "adaptations": [
+            "Relocated selected method under the internal process module"
+          ],
+          "upstreamGitMode": "100755"
+        },
+        {
+          "upstreamPath": "skills/subagent-driven-development/scripts/sdd-workspace",
+          "path": "references/vendor/superpowers-process/subagent-driven-development/scripts/sdd-workspace",
+          "sourceSha256": "4fd9770e7a49b6bde488c0e92bac1b3bd01fcbdaf8f06b6c4efbe3a1abd99f86",
+          "sha256": "4fd9770e7a49b6bde488c0e92bac1b3bd01fcbdaf8f06b6c4efbe3a1abd99f86",
+          "upstreamGitBlobSha": "b4661eb6ef646dae804c6b7932ccdbe942520a55",
+          "adaptations": [
+            "Relocated selected method under the internal process module"
+          ],
+          "upstreamGitMode": "100755"
+        },
+        {
+          "upstreamPath": "skills/subagent-driven-development/scripts/task-brief",
+          "path": "references/vendor/superpowers-process/subagent-driven-development/scripts/task-brief",
+          "sourceSha256": "cc563538e09abf719b34ddf4b2fa7a65cf3b301729039dbfa923cb060f729146",
+          "sha256": "cc563538e09abf719b34ddf4b2fa7a65cf3b301729039dbfa923cb060f729146",
+          "upstreamGitBlobSha": "b49fc546c85e1d6f6c8b523d6c887c55d98ed989",
+          "adaptations": [
+            "Relocated selected method under the internal process module"
+          ],
+          "upstreamGitMode": "100755"
+        },
+        {
+          "upstreamPath": "skills/subagent-driven-development/task-reviewer-prompt.md",
+          "path": "references/vendor/superpowers-process/subagent-driven-development/task-reviewer-prompt.md",
+          "sourceSha256": "bfed55c8f19d0ff6ed57b0fe09127c92890e9311c6c73917129598826bf9ebe8",
+          "sha256": "bfed55c8f19d0ff6ed57b0fe09127c92890e9311c6c73917129598826bf9ebe8",
+          "upstreamGitBlobSha": "5c619bc510440b7bf156e78c4dfc60f198963cf0",
+          "adaptations": [
+            "Relocated selected method under the internal process module"
+          ],
+          "upstreamGitMode": "100644"
+        },
+        {
+          "upstreamPath": "skills/test-driven-development/SKILL.md",
+          "path": "references/vendor/superpowers-process/test-driven-development/GUIDE.md",
+          "sourceSha256": "64b03fce4aee5a97a93160cea8111f3ba13a17b7c001db4bd5836d67fd10705d",
+          "sha256": "64b03fce4aee5a97a93160cea8111f3ba13a17b7c001db4bd5836d67fd10705d",
+          "upstreamGitBlobSha": "46838cc9e893c06259e3bdad0fc2425b36242f15",
+          "adaptations": [
+            "Relocated selected method under the internal process module",
+            "Renamed SKILL.md to GUIDE.md to prevent separate skill discovery"
+          ],
+          "upstreamGitMode": "100644"
+        },
+        {
+          "upstreamPath": "skills/test-driven-development/writing-good-tests.md",
+          "path": "references/vendor/superpowers-process/test-driven-development/writing-good-tests.md",
+          "sourceSha256": "51471c853306ff92ca8bb41dcaea05f31c0e46b03651f8f3c99754b7172f4ae1",
+          "sha256": "51471c853306ff92ca8bb41dcaea05f31c0e46b03651f8f3c99754b7172f4ae1",
+          "upstreamGitBlobSha": "d3c4482fd30b4f9084bb61545fe73939a7502c28",
+          "adaptations": [
+            "Relocated selected method under the internal process module"
+          ],
+          "upstreamGitMode": "100644"
+        },
+        {
+          "upstreamPath": "skills/systematic-debugging/CREATION-LOG.md",
+          "path": "references/vendor/superpowers-process/systematic-debugging/CREATION-LOG.md",
+          "sourceSha256": "c24733a5b1821bd6bed1fc950261f0b9f4e90097e0bbb96459d8179713730789",
+          "sha256": "c24733a5b1821bd6bed1fc950261f0b9f4e90097e0bbb96459d8179713730789",
+          "upstreamGitBlobSha": "9aa03092809feaf93c9bfa985252f6f1c9624692",
+          "adaptations": [
+            "Relocated selected method under the internal process module"
+          ],
+          "upstreamGitMode": "100644"
+        },
+        {
+          "upstreamPath": "skills/systematic-debugging/SKILL.md",
+          "path": "references/vendor/superpowers-process/systematic-debugging/GUIDE.md",
+          "sourceSha256": "51c6435d98c83c42c96ba7c35725a0b2c376cd487fb1a4e6bd0ddbe7e33ef202",
+          "sha256": "51c6435d98c83c42c96ba7c35725a0b2c376cd487fb1a4e6bd0ddbe7e33ef202",
+          "upstreamGitBlobSha": "62fc752aaef59a8bbed5d305f4cadc60f8ae07ed",
+          "adaptations": [
+            "Relocated selected method under the internal process module",
+            "Renamed SKILL.md to GUIDE.md to prevent separate skill discovery"
+          ],
+          "upstreamGitMode": "100644"
+        },
+        {
+          "upstreamPath": "skills/systematic-debugging/condition-based-waiting-example.ts",
+          "path": "references/vendor/superpowers-process/systematic-debugging/condition-based-waiting-example.ts",
+          "sourceSha256": "40ae5ebe497fdf310200e43fe986552546d0a22837c0d39e855db1cfd33eb88e",
+          "sha256": "40ae5ebe497fdf310200e43fe986552546d0a22837c0d39e855db1cfd33eb88e",
+          "upstreamGitBlobSha": "703a06b653160d060bbf46ab5c6e0cd7446bd592",
+          "adaptations": [
+            "Relocated selected method under the internal process module"
+          ],
+          "upstreamGitMode": "100644"
+        },
+        {
+          "upstreamPath": "skills/systematic-debugging/condition-based-waiting.md",
+          "path": "references/vendor/superpowers-process/systematic-debugging/condition-based-waiting.md",
+          "sourceSha256": "e89fec8400d6cd50f43407cec9fab50976ba4d55d0ec2eb51c0bd68036b54c26",
+          "sha256": "e89fec8400d6cd50f43407cec9fab50976ba4d55d0ec2eb51c0bd68036b54c26",
+          "upstreamGitBlobSha": "70994f777c586f7d4c43033aac34c7cf0da6688b",
+          "adaptations": [
+            "Relocated selected method under the internal process module"
+          ],
+          "upstreamGitMode": "100644"
+        },
+        {
+          "upstreamPath": "skills/systematic-debugging/defense-in-depth.md",
+          "path": "references/vendor/superpowers-process/systematic-debugging/defense-in-depth.md",
+          "sourceSha256": "1e175fb86fc357e58c6aebf5441e481e1b7868b4380c0456b63a17eefbd18ba7",
+          "sha256": "1e175fb86fc357e58c6aebf5441e481e1b7868b4380c0456b63a17eefbd18ba7",
+          "upstreamGitBlobSha": "e2483354dc2b62478a2624e34ca18bc0efe887b2",
+          "adaptations": [
+            "Relocated selected method under the internal process module"
+          ],
+          "upstreamGitMode": "100644"
+        },
+        {
+          "upstreamPath": "skills/systematic-debugging/find-polluter.sh",
+          "path": "references/vendor/superpowers-process/systematic-debugging/find-polluter.sh",
+          "sourceSha256": "dd7b8f13c4cc2a24b33ff87b18da9248f3e1c80a085c3316224f69ff0fa5c43c",
+          "sha256": "dd7b8f13c4cc2a24b33ff87b18da9248f3e1c80a085c3316224f69ff0fa5c43c",
+          "upstreamGitBlobSha": "985f5d08ccf8a3f2d40739cfcaf4413bb24bf1cb",
+          "adaptations": [
+            "Relocated selected method under the internal process module"
+          ],
+          "upstreamGitMode": "100755"
+        },
+        {
+          "upstreamPath": "skills/systematic-debugging/root-cause-tracing.md",
+          "path": "references/vendor/superpowers-process/systematic-debugging/root-cause-tracing.md",
+          "sourceSha256": "75b933b6a8c40bdb2031b10f21654395b56ec6ab6bc7b018c18d3fe57aeb7fb8",
+          "sha256": "75b933b6a8c40bdb2031b10f21654395b56ec6ab6bc7b018c18d3fe57aeb7fb8",
+          "upstreamGitBlobSha": "0e72e8f9566b7ef85e814633d1feacad9d0c5868",
+          "adaptations": [
+            "Relocated selected method under the internal process module"
+          ],
+          "upstreamGitMode": "100644"
+        },
+        {
+          "upstreamPath": "skills/systematic-debugging/test-academic.md",
+          "path": "references/vendor/superpowers-process/systematic-debugging/test-academic.md",
+          "sourceSha256": "fe2ba480d78ac0d686dc025f41c2a32a43d642bf533f91b0c6053a04d35d6486",
+          "sha256": "fe2ba480d78ac0d686dc025f41c2a32a43d642bf533f91b0c6053a04d35d6486",
+          "upstreamGitBlobSha": "23a6ed7a2044e0c44d74c3101406140f4851aa41",
+          "adaptations": [
+            "Relocated selected method under the internal process module"
+          ],
+          "upstreamGitMode": "100644"
+        },
+        {
+          "upstreamPath": "skills/systematic-debugging/test-pressure-1.md",
+          "path": "references/vendor/superpowers-process/systematic-debugging/test-pressure-1.md",
+          "sourceSha256": "0b6a915db0054577819834c79be9eb614e97bddba10d73768e1fbe91cfed048a",
+          "sha256": "0b6a915db0054577819834c79be9eb614e97bddba10d73768e1fbe91cfed048a",
+          "upstreamGitBlobSha": "8d13b467e4a98abfffd12161cbc3c418021d6023",
+          "adaptations": [
+            "Relocated selected method under the internal process module"
+          ],
+          "upstreamGitMode": "100644"
+        },
+        {
+          "upstreamPath": "skills/systematic-debugging/test-pressure-2.md",
+          "path": "references/vendor/superpowers-process/systematic-debugging/test-pressure-2.md",
+          "sourceSha256": "b2030aeffba07050e8ad573ddf87486457c4a016a786bb326235bebd856f2016",
+          "sha256": "b2030aeffba07050e8ad573ddf87486457c4a016a786bb326235bebd856f2016",
+          "upstreamGitBlobSha": "2d2315ec8a24ca872bc80d2f4056468ba051462a",
+          "adaptations": [
+            "Relocated selected method under the internal process module"
+          ],
+          "upstreamGitMode": "100644"
+        },
+        {
+          "upstreamPath": "skills/systematic-debugging/test-pressure-3.md",
+          "path": "references/vendor/superpowers-process/systematic-debugging/test-pressure-3.md",
+          "sourceSha256": "96b50a52e2c7989c9cf20fb752c47c1e9a3a70dc362f8f7989f8f5b64dac7708",
+          "sha256": "96b50a52e2c7989c9cf20fb752c47c1e9a3a70dc362f8f7989f8f5b64dac7708",
+          "upstreamGitBlobSha": "89734b86fdc756488df315d53e5c3ac2d3752cd8",
+          "adaptations": [
+            "Relocated selected method under the internal process module"
+          ],
+          "upstreamGitMode": "100644"
+        },
+        {
+          "upstreamPath": "skills/requesting-code-review/SKILL.md",
+          "path": "references/vendor/superpowers-process/requesting-code-review/GUIDE.md",
+          "sourceSha256": "2180e14a448e9410bec88e6646a2d1f0ce7fdd58de27388c1e052e929679d2bc",
+          "sha256": "2180e14a448e9410bec88e6646a2d1f0ce7fdd58de27388c1e052e929679d2bc",
+          "upstreamGitBlobSha": "68d338a58ecdd8b77bfbb519b781ef223dbbb842",
+          "adaptations": [
+            "Relocated selected method under the internal process module",
+            "Renamed SKILL.md to GUIDE.md to prevent separate skill discovery"
+          ],
+          "upstreamGitMode": "100644"
+        },
+        {
+          "upstreamPath": "skills/requesting-code-review/code-reviewer.md",
+          "path": "references/vendor/superpowers-process/requesting-code-review/code-reviewer.md",
+          "sourceSha256": "82e370be6b3447523816286195571e4216ba56ba1ad6ad0e87862294c4c78dcb",
+          "sha256": "82e370be6b3447523816286195571e4216ba56ba1ad6ad0e87862294c4c78dcb",
+          "upstreamGitBlobSha": "6d358b5d7d450c83cacbe450b7dbd4e673b694ad",
+          "adaptations": [
+            "Relocated selected method under the internal process module"
+          ],
+          "upstreamGitMode": "100644"
+        },
+        {
+          "upstreamPath": "skills/receiving-code-review/SKILL.md",
+          "path": "references/vendor/superpowers-process/receiving-code-review/GUIDE.md",
+          "sourceSha256": "091df1629510af1b92fc4abd6f96732ebedb4cb2c0f3457e8f2740b0504a2438",
+          "sha256": "091df1629510af1b92fc4abd6f96732ebedb4cb2c0f3457e8f2740b0504a2438",
+          "upstreamGitBlobSha": "950da7b74bf6dbed6b8726d12ddadd65a9f5fda7",
+          "adaptations": [
+            "Relocated selected method under the internal process module",
+            "Renamed SKILL.md to GUIDE.md to prevent separate skill discovery"
+          ],
+          "upstreamGitMode": "100644"
+        },
+        {
+          "upstreamPath": "skills/verification-before-completion/SKILL.md",
+          "path": "references/vendor/superpowers-process/verification-before-completion/GUIDE.md",
+          "sourceSha256": "2befe7fc55bcadaa3d97dd9e8efeb633d2561c0ebe74c5a8b17c4d9e7e4520b3",
+          "sha256": "2befe7fc55bcadaa3d97dd9e8efeb633d2561c0ebe74c5a8b17c4d9e7e4520b3",
+          "upstreamGitBlobSha": "7d45333cc4a49c57a80df6c1fe2fa777a207afbc",
+          "adaptations": [
+            "Relocated selected method under the internal process module",
+            "Renamed SKILL.md to GUIDE.md to prevent separate skill discovery"
+          ],
+          "upstreamGitMode": "100644"
+        },
+        {
+          "upstreamPath": "README.md",
+          "path": "references/vendor/superpowers-process/GUIDE.md",
+          "sourceSha256": "79f29f50c735862d2e304ea547b4c9aa67d9db6909ff6fb7b5ea922d7bcbc3e7",
+          "sha256": "8d392a0610b337e40156dd153f14cd84fc90026c35be3dde6628da8732897825",
+          "upstreamGitBlobSha": "c5bb59fdaf17ba154e803c549cd71a73ef36c24b",
+          "adaptations": [
+            "Replaced the upstream repository overview and installation catalog with a Design Lab internal method index",
+            "Linked to the first-party process adapter rather than registering upstream skills or agents"
+          ],
+          "upstreamGitMode": "100644"
+        }
+      ],
+      "licenseFiles": [
+        {
+          "path": "references/vendor/superpowers-process/LICENSE",
+          "sourceUrl": "https://raw.githubusercontent.com/obra/superpowers/2ce8aa15d05bd57213e6f746f953aafb7ded7a8b/LICENSE",
+          "sha256": "a37e0e9697144819e1d965176ac4ae5bc3fa02d11e7812036bbcadf6dafe2400"
+        }
+      ],
+      "adaptationNote": "Nine selected process methods are internal source resources. Design Lab supplies its own workflow engine and host-native specialist dispatch; upstream installers, UI descriptors and approval menus are not activated."
     }
   ],
   "packages": [

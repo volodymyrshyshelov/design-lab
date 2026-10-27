@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "design-lab",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A unified workspace for specification-based, responsive product prototypes.",
   "author": {
     "name": "volodymyrshyshelov"

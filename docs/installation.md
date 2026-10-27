@@ -1,91 +1,68 @@
 # Installation
 
-Design Lab installs into a selected project. It adds one `$design-lab` skill, one `design_lab` agent, and project MCP configuration. Codex authentication, model selection, and execution permissions remain with the invoking session.
+Design Lab installs its process, design references, specialist prompts, and tool gateway into one project. You use `$design-lab`; internal workflow tools and component providers are prepared by the package.
 
-## Requirements
+## Start a project
 
-Use Node.js 24.22.1 or later within the Node 24 series, npm, and an installed Codex client with your own model access. Python 3 enables the full local reference search. Browser verification uses the Chromium version installed by Playwright. Linux browser dependencies may require administrator access.
-
-The documented commands include Windows-compatible setup paths, but native Windows execution has not been verified. Plugin discovery and installation through the native Codex interface are also unverified. Project configuration remains subject to the client's trust settings and enforced policies.
-
-## Create a project
-
-Clone [Design Lab](https://github.com/volodymyrshyshelov/design-lab), enter its directory, and run:
+The starting requirements are Codex with your own model access, Node.js 24.22.1 or later within Node 24, and npm. Clone [Design Lab](https://github.com/volodymyrshyshelov/design-lab) and run:
 
 ```sh
-npm ci --ignore-scripts
+git clone https://github.com/volodymyrshyshelov/design-lab.git
+cd design-lab
 node scripts/design-lab.mjs create ../my-prototype --name "My prototype"
 ```
 
-The destination must be empty or not yet exist. `create` copies the starter and installs the skill, agent, and project configuration. It does not generate a finished product from your brief; that is the next task for Codex.
+The destination must be empty or not yet exist. Open the generated directory in Codex and start a new session. Give `$design-lab` your specification and expected outcome. Creating the directory supplies a starter; the subsequent design task adapts it to your product.
 
-Prepare the generated project:
+The installer adds `.agents/skills/design-lab/`, `.codex/agents/design_lab.toml`, and one `design_lab` MCP definition in `.codex/config.toml`. It preserves unrelated settings. The agent inherits the calling session's model and permissions; personal profiles and credentials are not copied or reconfigured.
 
-```sh
-cd ../my-prototype
-npm ci --ignore-scripts
-npx playwright install chromium
-node .agents/skills/design-lab/scripts/index.mjs doctor .
-```
+The first gateway startup prepares its internal dependencies from the skill's `runtime/package-lock.json`, within the installed skill. These include the MCP runtime, shadcn, Magic UI, and Impeccable. This can require npm network access. Repeated startup reuses a matching installation. There is no separate Superpowers installation or manual component-server registration.
 
-`doctor` reports versions, installed project files, and the browser executable. It performs no installation. A detected executable does not prove that Chromium can launch; the browser checks establish that separately.
+Design Lab prepares the generated application's dependencies from its own lockfile when working on it. Browser verification uses matching Playwright Chromium and the available operating-system libraries. Python 3 enables an optional reference-catalog search; it is not required to start Design Lab.
 
-Open the generated directory in Codex and start a new session. Confirm that `$design-lab` is available. The project agent `design_lab` inherits the calling session's model and permissions. No personal Codex profile is copied or edited by the project installer.
+Project settings remain subject to Codex trust and enforced execution policies. Native Windows and native plugin-directory loading remain unverified; Linux command behavior does not prove those client paths.
 
-## Install into an existing project
+## Existing projects and updates
 
-From the Design Lab repository:
+From the toolkit repository:
 
 ```sh
 node scripts/design-lab.mjs install /path/to/existing-project
 ```
 
-This adds `.agents/skills/design-lab/`, `.codex/agents/design_lab.toml`, and the `design_lab_shadcn` and `design_lab_magicui` MCP entries in `.codex/config.toml`. It preserves the existing application. It stops if installed files or matching configuration differ, so local changes can be reconciled explicitly.
+This installs the toolkit without replacing application code. The coordinator still needs to adapt the application's routes, behavior, manifest, build, and checks. Generic packaging expects `lab.manifest.json` and one static build at `dist/index.html` with local assets.
 
-Installation alone does not adapt an existing application's routes or build system. For packaging and browser checks, prepare `lab.manifest.json` with its concepts, screens, roles, and viewport widths, plus a single static build at `dist/index.html` with local assets. Keep the existing application's own build and test commands.
+Save changes before updating an installation. An identical installation can be repeated. The installer recognizes its pristine previous v0.1 snapshot and can migrate it to the integrated runtime, replacing the two original managed MCP definitions with one gateway. Modified installed files, agents, or custom server settings produce a conflict rather than a silent overwrite. Reconcile those changes before retrying.
 
-## Build and verify a starter project
+## If MCP is not available yet
 
-In a project created from the starter:
+No extra server setup is needed. The agent can invoke the same handlers through the bundled CLI with the actual project directory:
 
 ```sh
+node .agents/skills/design-lab/scripts/tool.mjs call design_lab_status --project .
+```
+
+The CLI works without changing the client's global configuration or reloading MCP. It does not replace native Codex delegation: model workers still come from the host session. If the host cannot create a separate reviewer, the workflow records `needs-review` rather than self-approving.
+
+For runtime and tool diagnostics, see the [runtime reference](../skills/design-lab/references/runtime.md).
+
+## Build and preview commands
+
+The coordinator runs checks and packaging during delivery. For direct use in a starter-based project:
+
+```sh
+npm ci --ignore-scripts
 npm run check
 npm test
 npm run build
 npm run package
-```
-
-Packaging produces `site/`, including a manifest describing the output. It requires a completed build; it does not run the build itself.
-
-Start the packaged site in one terminal:
-
-```sh
 node .agents/skills/design-lab/scripts/index.mjs serve . --port 4174
 ```
 
-The default listener is local to the current machine. Once local browser execution is authorized, run the matrix in another terminal. On Linux:
+The server exposes only `site/` and listens locally by default. Packaging uses the completed build and writes an output manifest. For browser QA, Design Lab prepares Playwright Chromium as needed; Linux system libraries may require administrator access. Browser execution follows the task's authorization and host policy. Interaction tests and visual inspection supplement the render matrix.
 
-```sh
-ALLOW_BROWSER_QA=1 node .agents/skills/design-lab/scripts/index.mjs check . --url http://127.0.0.1:4174
-```
+## Optional plugin distribution
 
-In PowerShell:
+`plugin.json` and `mcp.json` package the same gateway and skill. The plugin root is supplied by the host; the package does not ask you to register separate component servers. If a plugin starts without the product's working directory, its workflow mutations are blocked and the coordinator uses the bundled CLI with the real project path.
 
-```powershell
-$env:ALLOW_BROWSER_QA = "1"
-node .agents/skills/design-lab/scripts/index.mjs check . --url http://127.0.0.1:4174
-```
-
-The checker accepts a loopback HTTP URL and writes `reports/browser.json`. It checks the configured render matrix and available packaged offline views. It does not establish that every product action works; add and run the relevant interaction tests. The starter also provides `npm run test:browser` for its browser scenarios.
-
-If the port is occupied, choose another free port and use the same port in the check URL. Stop only the server process you started.
-
-## Update an installation
-
-Save local changes before obtaining a newer Design Lab revision. Compare it with the installed project copy before rerunning `install`. An identical installation can be repeated; differing files produce a conflict instead of a silent overwrite. Reconcile the changed skill, agent, and configuration before replacing them. The installer has no force-update command that discards edits.
-
-## Optional plugin package
-
-The repository includes `plugin.json` and `mcp.json`. The plugin is a separate discovery mechanism: installing it alone does not create the project agent, install application dependencies, or prepare Chromium. Use the project installer as the main setup route until native plugin loading is verified in your client.
-
-Avoid enabling both the plugin and the installed project copy of the same skill. Use one discovery route so `$design-lab` does not appear twice.
+Installing a plugin alone does not create the project agent or an application. Use one skill-discovery route in a project to avoid duplicate `$design-lab` entries. Native plugin installation remains a separately unverified client path.

@@ -5,26 +5,32 @@ description: Use when a user requests product interface prototypes, visual direc
 
 # Design Lab
 
-Provide one coherent design and prototyping workflow from a product brief to a verified interactive preview. Internal methods are references inside this skill, not extra skills or agents the user must select. Use the `design_lab` project agent for substantial work when supported; otherwise perform the same workflow in the current session. Inherit the user's model, account and permissions.
+Run the complete bundled design and delivery process through one entry point. The `design_lab` project agent coordinates internal specialist workers and a fresh independent review. Keep the user's model, account, permissions and requested scope. The internal roles and process methods need no separate skill, agent or component-server installation.
 
-## Start from the project
+## Activate the internal tools
 
-Read the supplied brief, canonical specification and existing implementation. For a missing attachment, request its file or path while progressing with independent work. Preserve the requested scope, stack and delivery order. An existing project receives targeted changes; initialize a starter only for a new project. For design-only or review-only requests, keep that scope.
+Use the Design Lab gateway tools when the host exposes them. Otherwise call the same bundled handlers through `node <actual-skill-directory>/scripts/tool.mjs` with the current product directory passed as `--project`. Runtime dependencies bootstrap automatically from the included lockfile. Do not tell the user to install or invoke Superpowers, Magic UI MCP or separate specialist agents.
 
-Keep the project brief, accepted decisions, screen coverage and actual verification in project files so another session can continue. Distinguish sourced behavior from design proposals and unresolved questions. Read [workflow.md](references/workflow.md) for the project contract and connected scenarios.
+For CLI tool inputs, write structured JSON to a project file and use `call TOOL --input FILE --project PROJECT`; do not interpolate a raw brief into shell code. If a plugin MCP process is bound to its package directory instead of the product, use this automatic CLI route. [runtime.md](references/runtime.md) explains the internal tools and first-run behavior.
 
-## Choose and build directions
+## Plan and delegate
 
-Use [visual-directions.md](references/visual-directions.md) to select the relevant internal methods. Read only the modules needed now; their upstream installation flows, model choices and approval rituals are not additional product requirements. Project rules and the user's existing authorization govern execution.
+Read the actual brief, canonical specification and existing implementation. Ask about consequential missing information while continuing independent work. Keep existing project conventions and delivery order; initialize the starter only for a new project. Design-only and review-only requests retain that scope.
 
-Requested variants share the same functional scope and connected synthetic state. Vary composition, navigation, type, geometry and density. Preserve existing directions when asked to extend them. Honor a request for an early single-direction preview, then complete the remaining agreed scope.
+Read [process-methods.md](references/process-methods.md), then start and plan the run with the internal workflow tools. The plan contains literal relative file/directory scopes, dependencies and acceptance criteria. Use a concise brief with source-file references; specialists read the full source material where necessary. Reuse decisions and authorization already supplied by the user.
 
-Reuse the licensed starter components when helpful. Keep user-facing messages centralized, domain rules separate from views and persistence injected. A working form changes the same record shown in lists and details; verify role transitions, important alternatives and reload behavior. Do not infer a new product's domain from the starter or from an automatic style search.
+Select the internal requirements, visual-design, implementation, interaction-QA, independent-review and documentation specializations that the task needs. Prepare each assignment with `design_lab_dispatch`, use native host delegation with the returned scoped prompt, then bind the actual returned worker ID. Run independent scopes in parallel. Worker assignments execute their own scope without starting nested workflows. Keep small changes narrow rather than creating artificial work for every role.
 
-## Run and deliver
+Collect actual artifacts and immutable check reports through `design_lab_complete_task`. Use the current returned workflow version for each mutation; reconcile conflicts instead of overwriting another worker. [workflow.md](references/workflow.md) covers connected product scenarios and shared context.
 
-[runtime.md](references/runtime.md) describes portable create/install, local dependencies, component MCP servers and site packaging. The skill includes the needed scripts and starter assets. Image generation and Product Design are optional host capabilities; absence of either does not block code-native UI work.
+For an interrupted assignment or a stale running review, stop its native worker first, then use `design_lab_cancel_task` and prepare a fresh assignment. Cancel running dependent workers before their prerequisite. The tool records cancellation and invalidates dependent results; it does not stop models.
 
-Run the checks relevant to the change using [verification.md](references/verification.md). Inspect native browser captures and fix observed layout or interaction defects. Browser permissions remain those of the current session; reuse an existing authorization instead of asking again.
+## Build, review and deliver
 
-Deliver a working preview, source/artifact location and the actual verification scope. Reports from another project are examples, not results for this one. Local synthetic behavior does not establish backend integration. For authorized sharing, serve only the packaged `site/` directory, preserve existing listeners and provide a reachable IP or domain rather than a bind address. Push or deploy within the user's authorized scope. Asana remains read-only unless a specific mutation is separately requested and approved.
+Use the bundled component tools and the relevant [visual methods](references/visual-directions.md). Requested directions share functional scope and synthetic state while varying composition, navigation, typography and density. Preserve approved directions when extending them. Keep messages centralized, behavior separate from views and persistence injected. Image generation remains an optional host capability.
+
+Run appropriate [checks](references/verification.md), inspect native browser captures and fix observed defects. Dispatch independent review into a fresh native context containing the brief, source and evidence, without the author's reasoning. Submit its actual findings through `design_lab_submit_review`. The reviewer must differ from the coordinator and contributors. Fix blocking findings, repeat affected checks and obtain a current review; changed source invalidates prior acceptance.
+
+If native delegation is unavailable, preserve `needs-review` and report that limit. Never label the author's self-check independent. Worker IDs and check outcomes are recorded from host execution, not cryptographically attested by this package.
+
+Complete through `design_lab_finish_run`, then deliver the working preview and actual verification scope. An early preview may precede the completed run. Serve only packaged `site/` for authorized sharing and preserve existing listeners. Push/deploy within existing authorization. Asana remains read-only unless a specific mutation is separately requested and approved.

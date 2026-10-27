@@ -11,7 +11,7 @@ export function inside(root, filename) {
 export async function filesIn(directory) {
   const files = [];
   for (const entry of await readdir(directory, { withFileTypes: true })) {
-    if (['node_modules', '.git', '__pycache__', 'dist', 'site', 'reports', '.checks', '.cache', '.impeccable', '.taste-skill', '.DS_Store'].includes(entry.name)) continue;
+    if (['node_modules', '.bootstrap-lock', '.git', '__pycache__', 'dist', 'site', 'reports', '.checks', '.cache', '.impeccable', '.taste-skill', '.DS_Store'].includes(entry.name)) continue;
     const filename = path.join(directory, entry.name);
     if (entry.isSymbolicLink()) throw new Error(`Symbolic links are not portable package inputs: ${filename}`);
     if (entry.isDirectory()) files.push(...(await filesIn(filename)).map(name => path.join(entry.name, name)));
