@@ -1,0 +1,7 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/mcp.schema.json",
+  "mcpServers": {
+    "design_lab_shadcn": { "type": "stdio", "command": "npx", "args": ["-y", "shadcn@4.23.0", "mcp"] },
+    "design_lab_magicui": { "type": "stdio", "command": "npx", "args": ["-y", "@magicuidesign/mcp@2.0.0"] }
+  }
+}

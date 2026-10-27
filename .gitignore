@@ -1,0 +1,17 @@
+node_modules/
+**/node_modules/
+**/dist/
+**/.checks/
+**/reports/screenshots/
+**/.design-lab-create-*/
+**/.design-lab-site-*/
+*.log
+.env
+.env.*
+*.pem
+__pycache__/
+.DS_Store
+
+**/.cache/
+**/.impeccable/
+**/.taste-skill/

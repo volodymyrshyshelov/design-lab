@@ -1,0 +1,135 @@
+{
+  "retrieved_date": "2026-10-27",
+  "entries": [
+    {
+      "kind": "font",
+      "family": "Manrope",
+      "subset": "cyrillic-ext",
+      "source_url": "https://fonts.gstatic.com/s/manrope/v20/xn7gYHE41ni1AdIRggqxSuXd.woff2",
+      "css_source_url": "https://fonts.googleapis.com/css2?family=Manrope:wght@400..800&display=swap",
+      "file": "assets/fonts/manrope-cyrillic-ext.woff2",
+      "sha256": "de37de877dc17e4577341fa68bb5cb526b53d54cb29721e674208546a3c7849d",
+      "license": "OFL-1.1",
+      "license_file": "assets/fonts/OFL-manrope.txt",
+      "license_source_url": "https://raw.githubusercontent.com/google/fonts/main/ofl/manrope/OFL.txt",
+      "local_sha256": "de37de877dc17e4577341fa68bb5cb526b53d54cb29721e674208546a3c7849d"
+    },
+    {
+      "kind": "font",
+      "family": "Manrope",
+      "subset": "cyrillic",
+      "source_url": "https://fonts.gstatic.com/s/manrope/v20/xn7gYHE41ni1AdIRggOxSuXd.woff2",
+      "css_source_url": "https://fonts.googleapis.com/css2?family=Manrope:wght@400..800&display=swap",
+      "file": "assets/fonts/manrope-cyrillic.woff2",
+      "sha256": "c268b459a9329e59fecf39a17618efd44c71735532048d60b12aab76a8c14914",
+      "license": "OFL-1.1",
+      "license_file": "assets/fonts/OFL-manrope.txt",
+      "license_source_url": "https://raw.githubusercontent.com/google/fonts/main/ofl/manrope/OFL.txt",
+      "local_sha256": "c268b459a9329e59fecf39a17618efd44c71735532048d60b12aab76a8c14914"
+    },
+    {
+      "kind": "font",
+      "family": "Manrope",
+      "subset": "latin",
+      "source_url": "https://fonts.gstatic.com/s/manrope/v20/xn7gYHE41ni1AdIRggexSg.woff2",
+      "css_source_url": "https://fonts.googleapis.com/css2?family=Manrope:wght@400..800&display=swap",
+      "file": "assets/fonts/manrope-latin.woff2",
+      "sha256": "a30ddcd349703aff7464c34bef3fffdff405ee50c113440d7c8693c02d210972",
+      "license": "OFL-1.1",
+      "license_file": "assets/fonts/OFL-manrope.txt",
+      "license_source_url": "https://raw.githubusercontent.com/google/fonts/main/ofl/manrope/OFL.txt",
+      "local_sha256": "a30ddcd349703aff7464c34bef3fffdff405ee50c113440d7c8693c02d210972"
+    },
+    {
+      "kind": "font",
+      "family": "Lora",
+      "subset": "cyrillic-ext",
+      "source_url": "https://fonts.gstatic.com/s/lora/v37/0QIvMX1D_JOuMwf7I-NP.woff2",
+      "css_source_url": "https://fonts.googleapis.com/css2?family=Lora:wght@400..700&display=swap",
+      "file": "assets/fonts/lora-cyrillic-ext.woff2",
+      "sha256": "0e523e4bc3c6308f002a3208ea2990cb4f64282d4fbb67c12f5726d13b66eef6",
+      "license": "OFL-1.1",
+      "license_file": "assets/fonts/OFL-lora.txt",
+      "license_source_url": "https://raw.githubusercontent.com/google/fonts/main/ofl/lora/OFL.txt",
+      "local_sha256": "0e523e4bc3c6308f002a3208ea2990cb4f64282d4fbb67c12f5726d13b66eef6"
+    },
+    {
+      "kind": "font",
+      "family": "Lora",
+      "subset": "cyrillic",
+      "source_url": "https://fonts.gstatic.com/s/lora/v37/0QIvMX1D_JOuMw77I-NP.woff2",
+      "css_source_url": "https://fonts.googleapis.com/css2?family=Lora:wght@400..700&display=swap",
+      "file": "assets/fonts/lora-cyrillic.woff2",
+      "sha256": "c57d9ca3bd42e6bc093badc7744dd2059a78f66a3a4dc6ca40574480c870f553",
+      "license": "OFL-1.1",
+      "license_file": "assets/fonts/OFL-lora.txt",
+      "license_source_url": "https://raw.githubusercontent.com/google/fonts/main/ofl/lora/OFL.txt",
+      "local_sha256": "c57d9ca3bd42e6bc093badc7744dd2059a78f66a3a4dc6ca40574480c870f553"
+    },
+    {
+      "kind": "font",
+      "family": "Lora",
+      "subset": "latin",
+      "source_url": "https://fonts.gstatic.com/s/lora/v37/0QIvMX1D_JOuMwr7Iw.woff2",
+      "css_source_url": "https://fonts.googleapis.com/css2?family=Lora:wght@400..700&display=swap",
+      "file": "assets/fonts/lora-latin.woff2",
+      "sha256": "ddb8c66035104e233fc024669183aad3738b6daa16deee2ebb1241bd0f98ace1",
+      "license": "OFL-1.1",
+      "license_file": "assets/fonts/OFL-lora.txt",
+      "license_source_url": "https://raw.githubusercontent.com/google/fonts/main/ofl/lora/OFL.txt",
+      "local_sha256": "ddb8c66035104e233fc024669183aad3738b6daa16deee2ebb1241bd0f98ace1"
+    },
+    {
+      "kind": "component",
+      "name": "button",
+      "source_url": "https://ui.shadcn.com/r/styles/new-york/button.json",
+      "file": "src/components/ui/button.tsx",
+      "upstream_sha256": "c2b999a96781e6c932632bd089095368e973bf5602e1b1a62156b7d2b43f1e84",
+      "license": "MIT",
+      "adaptations": [
+        "Local cn import",
+        "Explicit TypeScript component return type",
+        "Semantic button class and data-variant for stylesheet-driven themes"
+      ],
+      "license_file": "src/components/ui/LICENSE.shadcn.txt",
+      "license_source_url": "https://raw.githubusercontent.com/shadcn-ui/ui/main/LICENSE.md",
+      "local_sha256": "409ed5337ed87b635e82ed917fe60463d215cca12a20ddaf44b1f668871f77bd"
+    },
+    {
+      "kind": "component",
+      "name": "number-ticker",
+      "source_url": "https://magicui.design/r/number-ticker.json",
+      "file": "src/components/magicui/number-ticker.tsx",
+      "upstream_sha256": "0f7dcbc6a1962615a877590304e846f33d390002a51f2226f544938577c220f4",
+      "license": "MIT",
+      "adaptations": [
+        "Local cn import",
+        "Explicit TypeScript component return type",
+        "Respect prefers-reduced-motion",
+        "Configurable locale default ru-RU",
+        "Inherit theme text color instead of hardcoded black/white"
+      ],
+      "license_file": "src/components/magicui/LICENSE.magicui.txt",
+      "license_source_url": "https://raw.githubusercontent.com/magicuidesign/magicui/main/LICENSE.md",
+      "local_sha256": "53b6eaa625dece0e7b1c096c9f22df82365d757f1f15c262f971c44ec9fba57d"
+    },
+    {
+      "kind": "component",
+      "name": "blur-fade",
+      "source_url": "https://magicui.design/r/blur-fade.json",
+      "file": "src/components/magicui/blur-fade.tsx",
+      "upstream_sha256": "99a8e83aa8817f48e26d921e959ff9abefb5c2f1f0b72b166ed95e88e015949f",
+      "license": "MIT",
+      "adaptations": [
+        "Local cn import",
+        "Explicit TypeScript component return type",
+        "Respect prefers-reduced-motion"
+      ],
+      "license_file": "src/components/magicui/LICENSE.magicui.txt",
+      "license_source_url": "https://raw.githubusercontent.com/magicuidesign/magicui/main/LICENSE.md",
+      "local_sha256": "fce9a0357dcc2f7622fa515375ba61c0ee3bb668680c73a9ecacbbf6fdf49eba"
+    }
+  ],
+  "source_example_commit": "ffc90efff3d4998033bdb9349e357953f6549a55",
+  "generated_assets": []
+}

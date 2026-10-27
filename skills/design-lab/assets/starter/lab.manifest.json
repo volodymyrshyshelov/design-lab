@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "projectId": "design-lab-starter",
+  "title": "Рабочее пространство",
+  "entry": "index.html",
+  "concepts": [
+    {
+      "id": "studio",
+      "label": "Студия"
+    },
+    {
+      "id": "blueprint",
+      "label": "Порядок"
+    },
+    {
+      "id": "garden",
+      "label": "Сад"
+    }
+  ],
+  "screens": [
+    {
+      "id": "overview",
+      "label": "Обзор",
+      "role": "all"
+    },
+    {
+      "id": "requests",
+      "label": "Обращения",
+      "role": "all"
+    },
+    {
+      "id": "new-request",
+      "label": "Новое обращение",
+      "role": "all"
+    },
+    {
+      "id": "request-detail",
+      "label": "Карточка обращения",
+      "role": "all"
+    },
+    {
+      "id": "settings",
+      "label": "Настройки",
+      "role": "all"
+    }
+  ],
+  "roles": [
+    {
+      "id": "member",
+      "label": "Участник"
+    },
+    {
+      "id": "reviewer",
+      "label": "Проверяющий"
+    }
+  ],
+  "widths": [
+    360,
+    390,
+    430,
+    834,
+    1440
+  ],
+  "selectors": {
+    "screen": "[data-screen-id]",
+    "concept": "[data-active-concept]"
+  }
+}

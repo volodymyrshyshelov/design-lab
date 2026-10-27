@@ -1,0 +1,4 @@
+interface:
+  display_name: "Design Lab"
+  short_description: "Responsive prototypes from brief to verified preview"
+  default_prompt: "Use $design-lab to create responsive interface directions from my specification."

@@ -1,0 +1,8 @@
+* text=auto eol=lf
+skills/design-lab/references/vendor/** -text -whitespace
+LICENSES/** -text -whitespace
+**/LICENSE* -text -whitespace
+**/NOTICE* -text -whitespace
+**/OFL* -text -whitespace
+**/site/licenses/** -text -whitespace
+**/site/index.html binary

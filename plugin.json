@@ -1,0 +1,36 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "design-lab",
+  "version": "0.1.0",
+  "description": "A unified workspace for specification-based, responsive product prototypes.",
+  "author": {
+    "name": "volodymyrshyshelov"
+  },
+  "repository": "https://github.com/volodymyrshyshelov/design-lab",
+  "license": "LicenseRef-Proprietary",
+  "keywords": [
+    "design",
+    "prototypes",
+    "responsive",
+    "product"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Design Lab",
+        "shortDescription": "Responsive prototypes from brief to verified preview",
+        "longDescription": "A unified workflow for specifications, visual directions, connected interactions, verification and portable previews.",
+        "developerName": "volodymyrshyshelov",
+        "category": "Design",
+        "capabilities": [
+          "Read",
+          "Write"
+        ],
+        "defaultPrompt": [
+          "Use $design-lab to create responsive interface directions from my specification."
+        ],
+        "brandColor": "#174E46"
+      }
+    }
+  }
+}
